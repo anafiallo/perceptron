@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
     # create a dataset to train a network for the sum operation
     items = np.array([[random()/2 for _ in range(2)] for _ in range(1000)])
-    targets = np.array([[i[0] + i[1]] for i in items])
+    targets = np.array([[i[0] - i[1]] for i in items])
 
     # create a Multilayer Perceptron with one hidden layer
     mlp = MLP(2, [5], 1)
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 
     # create dummy data
     input = np.array([0.3, 0.1])
-    target = np.array([0.4])
+    target = np.array([0.2])
 
     # get a prediction
     output = mlp.forward_propagate(input)
